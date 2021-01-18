@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+
+  elastic-pl-example:
+    build:
+      context: .
+      args:
+        TAG: 6.8
+    restart: always
+
