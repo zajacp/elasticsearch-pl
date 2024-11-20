@@ -1,7 +1,9 @@
-ARG  TAG=7.10.1
-FROM elasticsearch:${TAG} as elasticsearch-pl
+#ARG  TAG=7.10.1
+ARG  TAG=8.16.0
+FROM elasticsearch:${TAG} AS elasticsearch-pl
 
-MAINTAINER Przemysław Zając
+LABEL maintainer="Przemysław Zając <zajacp@gmail.com>"
 
 RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
+RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-stempel
 
